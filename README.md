@@ -1,6 +1,11 @@
 Personal portal
+
 Simple portal in php/html/javascript without database. Allow to display different links to manage our home services !
 ![Portal demo](/portal.png)
+
+1. Modify the menu.html to add you entries.
+2. Install the extension linked in the top in your web browser to allow iframe to display other website.
+3. Use Docker to expose this service : `docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx
 
 Credits : 
 

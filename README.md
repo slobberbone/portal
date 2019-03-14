@@ -1,7 +1,7 @@
 Personal portal
 
 Simple portal in php/html/javascript without database. Allow to display different links to manage our home services !
-![Portal demo](/portal.png)
+![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 
 1. Modify the menu.html to add you entries.
 2. Install the extension linked in the top in your web browser to allow iframe to display other website.

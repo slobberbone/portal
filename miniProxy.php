@@ -280,7 +280,7 @@ if (empty($url)) {
     } else {
       $url = $startURL;
     }
-} else if (strpos($url, ":/") !== strpos($url, "://")) {
+} elseif (strpos($url, ":/") !== strpos($url, "://")) {
     //Work around the fact that some web servers (e.g. IIS 8.5) change double slashes appearing in the URL to a single slash.
     //See https://github.com/joshdick/miniProxy/pull/14
     $pos = strpos($url, ":/");
@@ -292,7 +292,7 @@ if (empty($scheme)) {
   if (strpos($url, "//") === 0) {
     $url = "http:" . $url;
   }
-} else if (!preg_match("/^https?$/i", $scheme)) {
+} elseif (!preg_match("/^https?$/i", $scheme)) {
     die('Error: Detected a "' . $scheme . '" URL. miniProxy exclusively supports http[s] URLs.');
 }
 
@@ -452,7 +452,7 @@ if (stripos($contentType, "text/html") !== false) {
   //Protects against cases where the server sends a Content-Type of "text/html" when
   //what's coming back is most likely not actually HTML.
   //TODO: Do this check before attempting to do any sort of DOM parsing?
-  if ($prependElem != NULL) {
+  if ($prependElem !== null) {
 
     $scriptElem = $doc->createElement("script",
       '(function() {
@@ -525,7 +525,7 @@ if (stripos($contentType, "text/html") !== false) {
   }
 
   echo "<!-- Proxified page constructed by miniProxy -->\n" . $doc->saveHTML();
-} else if (stripos($contentType, "text/css") !== false) { //This is CSS, so proxify url() references.
+} elseif (stripos($contentType, "text/css") !== false) { //This is CSS, so proxify url() references.
   echo proxifyCSS($responseBody, $url);
 } else { //This isn't a web page or CSS, so serve unmodified through the proxy with the correct headers (images, JavaScript, etc.)
   header("Content-Length: " . strlen($responseBody), true);

@@ -2,6 +2,15 @@
 ![Portal logo](/images/interface/portal_logo.png)
 
 Simple portal in html/javascript without database. Allow to display different links to manage our home services !
+
+# Features
+- Links are displayed in an iframe
+- Toggle button to maximize the main iframe
+- Collapse menu
+- Loading page information
+- Help
+
+# Screenshots
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 
 1. Modify the menu.html to add you entries.

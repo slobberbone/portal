@@ -29,8 +29,8 @@ fieldset {
 }
 
 #top_left h1 {
-	margin-left : 20px;
-	margin-top: 18px;
+	/*margin-left : 20px;*/
+	margin-top: -10px;
 	font-size: 2.3em;
 	font-weight: normal;
 }

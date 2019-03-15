@@ -1,4 +1,5 @@
-# Personal portal
+# Personal portal 
+![Portal logo](/images/interface/portal_logo.png)
 
 Simple portal in html/javascript without database. Allow to display different links to manage our home services !
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)

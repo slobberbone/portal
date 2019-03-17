@@ -10,6 +10,11 @@ Simple portal in html/javascript without database. Allow to display different li
 - Loading page information
 - Help
 
+# Roadmap
+- Menu configuration from json file
+- Limit access with a login/password from htpasswd file
+- Add Nginx proxy configuration for several services | docker configuration ?
+
 # Screenshots
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 

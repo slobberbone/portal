@@ -18,9 +18,11 @@ Simple portal in html/javascript without database. Allow to display different li
 # Screenshots
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 
-1. Use Docker to expose this service : `docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx`
-2. Unzip the portal in `/[path]/Portal/www/`
-3. In `/[path]/Portal/www/`, copy config/config.sample.json and rename it to config/config.json
+1. A. Use a Web Server like Nginx or Apache
+1. B. Use Docker to expose this service : `docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx`
+2. A. Unzip the portal in Nginx/Apache directory `/var/www/html`
+2. B. For a docker container unzip the portal in :`/[path]/Portal/www/`
+3. Copy `config/config.sample.json` and rename it to `config/config.json`
 4. To add you entries edit the config/config.json like :
 	`{
 	"label":"[titre de la section]",

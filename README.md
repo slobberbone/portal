@@ -26,9 +26,9 @@ Simple portal in html/javascript without database. Allow to display different li
 	  {"url":"[site internet]", "target":"[main : affiche dans le portal | _blank : ouvre un nouvel onglet", "label":"[titre du lien]"}
 	]
 	} `
-3. Install the extension linked in the top in your web browser to allow iframe to display other website.
-4. Use Docker to expose this service : ` docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx `
-5. Unzip the portal in /[path]/Portal/www/
+3. Use Docker to expose this service : ` docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx `
+4. Unzip the portal in ` /[path]/Portal/www/ `
+5. Install the extension linked in the top in your web browser to allow iframe to display other website.
 
 ## Credits : 
 

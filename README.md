@@ -18,9 +18,17 @@ Simple portal in html/javascript without database. Allow to display different li
 # Screenshots
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 
-1. Modify the menu.html to add you entries.
-2. Install the extension linked in the top in your web browser to allow iframe to display other website.
-3. Use Docker to expose this service : ` docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx `
+1. Copy config/config.sample.json and rename it to config/config.json
+2. To add you entries edit dthe config/config.json like :
+	` {
+	"label":"[titre de la section]",
+	"entries":[
+	  {"url":"[site internet]", "target":"[main : affiche dans le portal | _blank : ouvre un nouvel onglet", "label":"[titre du lien]"}
+	]
+	} `
+3. Install the extension linked in the top in your web browser to allow iframe to display other website.
+4. Use Docker to expose this service : ` docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx `
+5. Unzip the portal in /[path]/Portal/www/
 
 ## Credits : 
 

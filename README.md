@@ -9,25 +9,26 @@ Simple portal in html/javascript without database. Allow to display different li
 - Collapse menu
 - Loading page information
 - Help
+- Menu configuration from json file
 
 # Roadmap
-- Menu configuration from json file
 - Limit access with a login/password from htpasswd file
 - Add Nginx proxy configuration for several services | docker configuration ?
 
 # Screenshots
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 
-1. Copy config/config.sample.json and rename it to config/config.json
-2. To add you entries edit dthe config/config.json like :
-	` {
+1. Use Docker to expose this service : `docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx`
+2. Unzip the portal in `/[path]/Portal/www/`
+3. In `/[path]/Portal/www/`, copy config/config.sample.json and rename it to config/config.json
+4. To add you entries edit the config/config.json like :
+	`{
 	"label":"[titre de la section]",
 	"entries":[
 	  {"url":"[site internet]", "target":"[main : affiche dans le portal | _blank : ouvre un nouvel onglet", "label":"[titre du lien]"}
 	]
-	} `
-3. Use Docker to expose this service : ` docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx `
-4. Unzip the portal in ` /[path]/Portal/www/ `
+	}`
+
 5. Install the extension linked in the top in your web browser to allow iframe to display other website.
 
 ## Credits : 

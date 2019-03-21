@@ -28,15 +28,17 @@ function GetLatestRealaseInfo() {
 			return true;
 		});
 	}
-
-	$.getJSON( "config/config.json").done(function(json) {
-		var version = json["version"];
-		if(!version){
-			$.getJSON( "config/config.sample.json").done(function(json) {
-				compareToGithubVersion(json["version"]);
-			});
-		} else {
-			compareToGithubVersion(version);
-		}
+	$.getJSON( "config/config.sample.json").done(function(json) {
+		compareToGithubVersion(json["version"]);
 	});
+#	$.getJSON( "config/config.json").done(function(json) {
+#		var version = json["version"];
+#		if(!version){
+#			$.getJSON( "config/config.sample.json").done(function(json) {
+#				compareToGithubVersion(json["version"]);
+#			});
+#		} else {
+#			compareToGithubVersion(version);
+#		}
+#	});
 }

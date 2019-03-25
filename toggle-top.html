@@ -5,11 +5,18 @@
 	<meta http-equiv="Content-Language" content="en" />
 	<meta name="robots" content="noindex, nofollow" />
 	<link rel="stylesheet" type="text/css" href="stylesheets/interface/common.css" />
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="js/search.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/interface/toggle.css" />
+	<script type="text/javascript" src="js/portalUtils.js"></script>
+	<script type="text/javascript" src="js/toggleTop.js"></script>
 </head>
 <body>
-	<div id="navigation">
+	<div id="navigation" style="text-align: center;">
+	 	<!-- Rounded switch -->
+		<label class="switch">
+		  <input id="checkboxTop" type="checkbox" onclick="parent.parent.postMessage('toggleTop clicked', '*');">
+		  <span class="slider round"></span>
+		</label>
+		
 	</div>
 </body>
 </html>

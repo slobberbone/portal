@@ -5,7 +5,7 @@ Simple portal in html/javascript without database. Allow to display different li
 
 # Features
 - Links are displayed in an iframe
-- Toggle button to maximize the main iframe
+- Toggle buttons to maximize the main iframe with auto mode or not (depend of config file)
 - Collapse menu
 - Loading page information
 - Help
@@ -18,6 +18,7 @@ Simple portal in html/javascript without database. Allow to display different li
 # Screenshots
 ![Portal demo](/portal.png) ![Portal menu collapse](/portal_menu.png) ![Portal menu toggle](/portal_toggle.png)
 
+# Installation
 1. Use a Web Server like Nginx or Apache Or Use Docker to expose this service : `docker run -d --name=portal -v /[path]/Portal:/config:rw -p 80:80 --restart=always linuxserver/nginx`
 
 2. Unzip the portal in Nginx/Apache directory `/var/www/html` Or for a docker container unzip the portal in :`/[path]/Portal/www/`
@@ -33,6 +34,28 @@ Simple portal in html/javascript without database. Allow to display different li
 	}`
 
 5. Install the extension linked in the top in your web browser to allow iframe to display other website.
+
+# Configuration
+Edit the config/config.json.
+
+Add an entry in the menu :
+	`{
+	"label":"[titre de la section]",
+	"entries":[
+	  {"url":"[site internet]", "target":"[main : affiche dans le portal | _blank : ouvre un nouvel onglet", "label":"[titre du lien]"}
+	]
+	}`
+Disable "auto hide/show on Menu :
+	`"ui":[{
+	"autoHideMenu":"false",
+	"autoHideTop":"true"
+     	}],`
+
+Disable "auto hide/show on Top :
+	`"ui":[{
+	"autoHideMenu":"true",
+	"autoHideTop":"false"
+     	}],`
 
 ## Credits : 
 

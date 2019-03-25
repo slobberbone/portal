@@ -6,70 +6,20 @@
 	<meta http-equiv="Content-Language" content="en" />
 	<meta name="robots" content="noindex, nofollow" />
 	<link rel="icon" type="image/png" href="images/interface/favicon.png" />
+	<script type="text/javascript" src="js/portalUtils.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </head>
-<script>
-        var origCols = null;
-
-        function receiveMessage(event)
-        {
-          if(origCols!=null)
-           showFrame()
-          else
-           hideFrame();
-        }
-
-        addEventListener("message", receiveMessage, false);
-
-        function hideFrame() {
-            var frameset = document.getElementById("frameSet");
-            origCols = frameset.cols;
-            frameset.cols = "0,*";
-        }
-
-        function showFrame() {
-            document.getElementById("frameSet").cols = origCols;
-            origCols = null;
-        }
-	function hideFrameSpinner() {
-            var frameset = document.getElementById("frameSetSpinner");
-            origRows = frameset.rows;
-	    var i = 70;
-	    while(i>0){
-		i--;
-		sleep(500).then(changeSpinnerSize(i));
-	    }
-        }
-
-        function showFrameSpinner() {
-            document.getElementById("frameSetSpinner").rows = "26,70,*";
-        }
-	function hideLoader() {
-		document.getElementById('main').onload = function() {
-			hideFrameSpinner();
-		};
-	};
-
-	function showLoader() {
-	   showFrameSpinner();
-    	};
-	
-	function changeSpinnerSize(i) {
-		document.getElementById("frameSetSpinner").rows = "26,"+i+",*";
-	}
-	function sleep (time) {
-	  return new Promise((resolve) => setTimeout(resolve, time));
-	}
-
-</script>
-	<frameset rows="60,*" frameborder="0" framespacing="0">
-		<frame src="top.html" name="top" />
-		<frameset id="frameSet" cols="215,*" frameborder="0" framespacing="0">
+	<frameset id="frameSetTop" rows="60,*" frameborder="0" framespacing="0">
+		<frame src="top.html" id="top" name="top" />
+		<frameset id="frameSetMenu" cols="215,*" frameborder="0" framespacing="0">
 			<frame src="menu.html" id="side" name="side" target="main" />
 			
 			<frameset id="frameSetSpinner" rows="26,70,*" frameborder="0" framespacing="0">
-				<frameset cols="50,*" frameborder="0" framespacing="0">
-					<frame src="toggle.html" id="toggle" name="toggle" />
+				<frameset cols="50,*,50" frameborder="0" framespacing="0">
+					<frame src="toggle-menu.html" id="toggle" name="toggle" />
 					<frame src="sidebar.html" name="navigation" noresize="noresize" />
+					<frame src="toggle-top.html" id="toggle-top" name="toggle-top" />
 				</frameset>
 				<frame src="spinner.html" id="spinner" name="spinner" />
 				<frame src="main.html" id="main" name="main" noresize="noresize" onload="hideLoader();hideFrameSpinner();" />

@@ -1,6 +1,10 @@
 
 /* The switch - the box around the slider */
 
+body {
+	overflow : hidden;
+}
+
 div.container label {
     margin: 0;
     background: yellow;

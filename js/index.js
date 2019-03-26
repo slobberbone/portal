@@ -4,6 +4,9 @@ var onHoverModeMenu = false;
 var onHoverModeTop = false;
 
 
+var hideMenuWidth = "2";
+var hideTopWidth = "2";	
+
 window.onload = function(e){
 	
 	var hideMenu = PortalUtils.getCookie("hideMenu");
@@ -21,7 +24,7 @@ window.onload = function(e){
 	$.getJSON("config/config.json", function(json) {
 
 		var autoHideMenu = true;
-		var autoHideTop = true;	
+		var autoHideTop = true;
 		try {
 			for (var i = 0; i < json["ui"].length; i++) {
 				if(json["ui"][i]["autoHideMenu"] === "false"){
@@ -29,6 +32,9 @@ window.onload = function(e){
 				}
 				if(json["ui"][i]["autoHideTop"] === "false"){
 					autoHideTop = false;
+				}
+				if(json["ui"][i]["hideMenuWidth"]){
+					hideMenuWidth = json["ui"][i]["hideMenuWidth"];
 				}
 			}
 		} catch (e) {
@@ -41,6 +47,8 @@ window.onload = function(e){
 		if(autoHideTop){
 			setTimeout(autoTop,500);
 		}
+		setTimeout(hideMenuWidth,500);
+		setTimeout(hideTopWidth,500);
 	});
 };
 
@@ -60,7 +68,7 @@ function autoHideFrameMenu() {
 function hideFrameMenu() {
     var frameset = document.getElementById("frameSetMenu");
     menuOrigCols = frameset.cols;
-    frameset.cols = "2,*";
+    frameset.cols = hideMenuWidth + ",*";
 }
 
 function autoShowFrameMenu() {
@@ -90,7 +98,7 @@ function autoHideFrameTop() {
 function hideFrameTop() {
     var frameset = document.getElementById("frameSetTop");
     topOrigRows = frameset.rows;
-    frameset.rows = "2,*";
+    frameset.rows = hideTopWidth + ",*";
 }
 
 function autoShowFrameTop() {

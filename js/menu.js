@@ -13,9 +13,9 @@ window.onload = function(e){
 			for (var j = 0; j < json["menu"][i]["entries"].length; j++) {
 				var li = document.createElement("li");
 				if(j%2 == 0){
-					li.className = "menuli_style1";
+					li.className = "menuli_style1 hvr-underline-from-center";
 				} else {
-					li.className = "menuli_style2";
+					li.className = "menuli_style2 hvr-underline-from-center";
 				}
 				var a = document.createElement("a");
 				a.href = json["menu"][i]["entries"][j]["url"];

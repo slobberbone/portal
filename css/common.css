@@ -73,7 +73,7 @@ fieldset {
 #navigation {
 	width: 100%;
 	height: 26px;
-	background: #ededed url(../../images/interface/bar.gif) top left repeat-x;
+	background: #ededed url(../images/interface/bar.gif) top left repeat-x;
 }
 
 #search_box {

@@ -103,3 +103,9 @@ fieldset {
 	text-align: center;
 	font-weight: bold;	
 }
+.mainModalFrame {
+	height: 80%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}

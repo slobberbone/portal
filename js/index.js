@@ -5,7 +5,9 @@ var onHoverModeTop = false;
 
 
 var hideMenuWidth = "2";
-var hideTopWidth = "2";	
+var hideTopWidth = "2";
+
+var rows = "26,70,*";
 
 window.onload = function(e){
 	
@@ -124,12 +126,12 @@ function hideFrameSpinner() {
 }
 
 function showFrameSpinner() {
-    document.getElementById("frameSetSpinner").rows = "26,70,*";
+    document.getElementById("frameSetSpinner").rows = rows;
 }
 function hideLoader() {
-	document.getElementById('main').onload = function() {
+	//document.getElementById('main').onload = function() {
 		hideFrameSpinner();
-	};
+	//};
 };
 
 function showLoader() {
@@ -137,7 +139,10 @@ function showLoader() {
 };
 
 function changeSpinnerSize(i) {
-	document.getElementById("frameSetSpinner").rows = "26,"+i+",*";
+	var rowsArray = rows.split(",");
+	rowsArray[1] = i;
+	rows = rowsArray.join();
+	document.getElementById("frameSetSpinner").rows = rows;
 }
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));

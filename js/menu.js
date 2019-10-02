@@ -1,8 +1,14 @@
+var rows = 0;
 window.onload = function(e){
 	$.getJSON("config/config.json", function(json) {
+
 		function loading(event) {
 			parent.showLoader();
 		}
+
+
+
+
 		var menu = document.getElementById("menu");
 		for (var i = 0; i < json["menu"].length; i++) {
 			var ul = document.createElement("ul");
@@ -17,10 +23,25 @@ window.onload = function(e){
 				} else {
 					li.className = "menuli_style2 hvr-underline-from-center";
 				}
+
+				var newFrame = document.createElement("frame");
+				newFrame.id = json["menu"][i]["entries"][j]["target"]+i+j;
+				newFrame.name = json["menu"][i]["entries"][j]["target"]+i+j
+				newFrame.className = "mainTab";
+				newFrame.noresize="noresize";
+				newFrame.onload=parent.hideLoader();
+				newFrame.src="main.html";
+				var domFrameset = parent.parent.document.getElementById("frameSetSpinner");
+				if (domFrameset) {
+					domFrameset.appendChild(newFrame);
+					parent.rows = parent.rows + ",0";
+					domFrameset.rows = parent.rows;
+				}
+
 				var a = document.createElement("a");
 				a.href = json["menu"][i]["entries"][j]["url"];
-				a.target = json["menu"][i]["entries"][j]["target"];
-				a.addEventListener("click",loading);
+				a.target = json["menu"][i]["entries"][j]["target"]+i+j;
+				a.addEventListener("click",loadingAndTab);
 				var text = document.createTextNode(json["menu"][i]["entries"][j]["label"]);
 				a.appendChild(text);
 				li.appendChild(a);
@@ -59,3 +80,30 @@ $('button').toggle(
 	    $('#menu').css('left', '200px')
 	}
 );
+
+function loadingAndTab(event) {
+	parent.showLoader();
+	var frameSetSpinnerNodes = parent.parent.document.getElementById("frameSetSpinner").childNodes;
+	var mainTargets = [];
+	for (var i = 0; i < frameSetSpinnerNodes.length; i++) {
+		if(frameSetSpinnerNodes[i].className && frameSetSpinnerNodes[i].className.includes("mainTab")){
+			mainTargets.push(frameSetSpinnerNodes[i]);
+		}
+	}
+	var rowsArray = parent.rows.split(",");
+	var rowsToChange = parent.rows.split(",");
+	var idToSearch = event.currentTarget.target;
+	for (var i = 0; i < mainTargets.length; i++) {
+		if(mainTargets[i].id === idToSearch){
+			for (var j = 0; j < rowsArray.length; j++) {
+				if(j === i){
+					rowsToChange[j+2] = "*";
+				} else {
+					rowsToChange[j+2] = "0";
+				}
+			}
+		}
+	}
+	parent.rows = rowsToChange.join();
+	parent.parent.document.getElementById("frameSetSpinner").rows = parent.rows;
+}

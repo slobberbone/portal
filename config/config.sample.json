@@ -9,59 +9,58 @@
 "menu":[{
 	"label":"Réseau",
 	"entries":[
-	  {"url":"/", "target":"main", "label":"OpenMediaVault"},
-	  {"url":"/portainer/", "target":"main", "label":"Portainer"},
-	  {"url":"/proxmox", "target":"main", "label":"Proxmox"},
-	  {"url":"https://mafreebox.freebox.fr/", "target":"main", "label":"Freebox Server"}
+	  {"url":"/", "target":"main", "label":"OpenMediaVault", "login":"admin"},
+	  {"url":"/portainer/", "target":"main", "label":"Portainer", "login":"admin"},
+	  {"url":"/proxmox", "target":"main", "label":"Proxmox", "login":"admin"},
+	  {"url":"https://mafreebox.freebox.fr/", "target":"main", "label":"Freebox Server", "login":"admin"}
 	]
 	},
 	{
 	"label":"Multimédia",
 	"entries":[
-	  {"url":"http://XXX/", "target":"main", "label":"Ampli Salon"},
-	  {"url":"http://XXX:8080", "target":"main", "label":"Kodi Salon"},
-	  {"url":"/transmission/web/", "target":"main", "label":"Téléchargements Torrents"},
-	  {"url":"/sickrage/home/", "target":"main", "label":"Gestion des Séries"},
-	  {"url":"/couchpotato/home/", "target":"main", "label":"Gestion des Films"},
-	  {"url":"/lazylibrarian/home/", "target":"main", "label":"Gestion des Livres"}
+	  {"url":"http://XXX/", "target":"main", "label":"Ampli Salon", "login":"admin"},
+	  {"url":"http://XXX:8080", "target":"main", "label":"Kodi Salon", "login":"admin"},
+	  {"url":"/transmission/web/", "target":"main", "label":"Téléchargements Torrents", "login":"admin"},
+	  {"url":"/sickrage/home/", "target":"main", "label":"Gestion des Séries", "login":"admin"},
+	  {"url":"/couchpotato/home/", "target":"main", "label":"Gestion des Films", "login":"admin"},
+	  {"url":"/lazylibrarian/home/", "target":"main", "label":"Gestion des Livres", "login":"admin"}
 	]
 	},
 	{
 	"label":"Services",
 	"entries":[
-	  {"url":"/nextcloud/", "target":"main", "label":"Fichiers"},
-	  {"url":"/nextdom/", "target":"main", "label":"Domotique"},
-	  {"url":"/jackett/UI/Dashboard", "target":"main", "label":"Recherche Torrents"},
-	  {"url":"/transmission/web/", "target":"main", "label":"Téléchargements Torrents"},
-	  {"url":"/sickrage/home/", "target":"main", "label":"Gestion des Séries"},
-	  {"url":"/couchpotato/home/", "target":"main", "label":"Gestion des Films"}
+	  {"url":"/nextcloud/", "target":"main", "label":"Fichiers", "login":"admin"},
+	  {"url":"/nextdom/", "target":"main", "label":"Domotique", "login":"admin"},
+	  {"url":"/jackett/UI/Dashboard", "target":"main", "label":"Recherche Torrents", "login":"admin"},
+	  {"url":"/transmission/web/", "target":"main", "label":"Téléchargements Torrents", "login":"admin"},
+	  {"url":"/sickrage/home/", "target":"main", "label":"Gestion des Séries", "login":"admin"},
+	  {"url":"/couchpotato/home/", "target":"main", "label":"Gestion des Films", "login":"admin"}
 	]
 	},
 	{
 	"label":"Services Externes",
 	"entries":[
-	  {"url":"https://cfspart.impots.gouv.fr/LoginMDP", "target":"main", "label":"Impôts"},
-	  {"url":"https://www.laposte.fr/", "target":"main", "label":"La Poste"},
-	  {"url":"https://subscribe.free.fr/login/", "target":"main", "label":"Free Internet"},
-	  {"url":"https://login.orange.fr/", "target":"main", "label":"Orange Internet"},
-	  {"url":"https://particulier.edf.fr/fr/accueil/connexion/mon-espace-client.html", "target":"main", "label":"Énergie"},
-	  {"url":"https://www.saurclient.fr/", "target":"main", "label":"SAUR Eau"},
-	  {"url":"https://www.service.eau.veolia.fr/home.html", "target":"main", "label":"Véolia Eau"},
-	  {"url":"https://www.creditmutuel.fr/", "target":"main", "label":"Crédit Mutuel Banque"},
-	  {"url":"https://www.labanquepostale.fr/", "target":"main", "label":"Banque Postale"},
-	  {"url":"https://www.leroymerlin.fr/v3/lmLogin.do", "target":"main", "label":"Travaux"},
-	  {"url":"https://calendriersemis.com/wp-content/uploads/2014/06/Calendrier-des-Semis-A2-l%C3%A9gumes-herbes-compagnonnage-potager.jpg", "target":"main", "label":"Potager"},
-	  {"url":"https://assure.ameli.fr/PortailAS/appmanager/PortailAS/assure", "target":"main", "label":"Sécurité Sociale"}
+	  {"url":"https://cfspart.impots.gouv.fr/LoginMDP", "target":"main", "label":"Impôts", "login":"admin"},
+	  {"url":"https://www.laposte.fr/", "target":"main", "label":"La Poste", "login":"admin"},
+	  {"url":"https://subscribe.free.fr/login/", "target":"main", "label":"Free Internet", "login":"admin"},
+	  {"url":"https://login.orange.fr/", "target":"main", "label":"Orange Internet", "login":"admin"},
+	  {"url":"https://particulier.edf.fr/fr/accueil/connexion/mon-espace-client.html", "target":"main", "label":"Énergie", "login":"admin"},
+	  {"url":"https://www.saurclient.fr/", "target":"main", "label":"SAUR Eau", "login":"admin"},
+	  {"url":"https://www.service.eau.veolia.fr/home.html", "target":"main", "label":"Véolia Eau", "login":"admin"},
+	  {"url":"https://www.creditmutuel.fr/", "target":"main", "label":"Crédit Mutuel Banque", "login":"admin"},
+	  {"url":"https://www.labanquepostale.fr/", "target":"main", "label":"Banque Postale", "login":"admin"},
+	  {"url":"https://www.leroymerlin.fr/v3/lmLogin.do", "target":"main", "label":"Travaux", "login":"admin"},
+	  {"url":"https://calendriersemis.com/wp-content/uploads/2014/06/Calendrier-des-Semis-A2-l%C3%A9gumes-herbes-compagnonnage-potager.jpg", "target":"main", "label":"Potager", "login":"admin"},
+	  {"url":"https://assure.ameli.fr/PortailAS/appmanager/PortailAS/assure", "target":"main", "label":"Sécurité Sociale", "login":"admin"}
 	]
 	},
 	{
 	"label":"Catalogues 3D",
 	"entries":[
-	  {"url":"https://www.thingiverse.com/", "target":"main", "label":"Thingiverse"},
-	  {"url":"https://www.myminifactory.com/fr/", "target":"main", "label":"MyMiniFactory"},
-	  {"url":"https://www.youmagine.com/", "target":"main", "label":"YM"}
+	  {"url":"https://www.thingiverse.com/", "target":"main", "label":"Thingiverse", "login":"admin"},
+	  {"url":"https://www.myminifactory.com/fr/", "target":"main", "label":"MyMiniFactory", "login":"admin"},
+	  {"url":"https://www.youmagine.com/", "target":"main", "label":"YM", "login":"admin"}
 	]
 	}
 ]
 }
-

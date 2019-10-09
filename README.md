@@ -1,4 +1,4 @@
-# Personal portal 
+# Personal portal
 ![Portal logo](/images/interface/portal_logo.png)
 
 Simple portal in html/javascript without database. Allow to display different links to manage your home services !
@@ -10,6 +10,7 @@ Simple portal in html/javascript without database. Allow to display different li
 - Loading page information
 - Help
 - Menu configuration from json file
+- Main picture with links from json file
 
 # Roadmap
 - Limit access with a login/password from htpasswd file
@@ -64,7 +65,20 @@ Set a width of 20 pixels after "auto hide" on Menu :
 	"hideMenuWidth":"20"
      	}],`
 
-## Credits : 
+Customize picture's links area :
+	`"[Zone]": {"url":"[site internet]", "target":"[main : affiche dans le portal | _blank : ouvre un nouvel onglet", "label":"[titre du lien]"},`
+		Zone can be :
+			-	chauffage_entry
+			-	multimedia_entry
+			-	securite_entry
+			-	energie_entry
+			-	surveillance_entry
+			-	reseau_entry
+			-	fichiers_entry
+			-	lumieres_entry
+			-	recyclage_entry
+
+## Credits :
 
 - Vautour Style : http://www.be-root.com/2016/10/03/nagios-vautour-style/
 	- The menu of Vautour Style use the javascript framework jQuery (https://jquery.com/).

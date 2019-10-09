@@ -62,6 +62,15 @@
 	  {"url":"https://www.youmagine.com/", "target":"main", "label":"YM"}
 	]
 	}
-]
+],
+"main":{
+	"chauffage_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Chauffage"},
+	"multimedia_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Multimédia"},
+	"securite_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Sécurité"},
+	"energie_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Énérgie"},
+	"surveillance_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Surveillance"},
+	"reseau_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Réseau"},
+	"fichiers_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Fichiers"},
+	"lumieres_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Lumières"},
+	"recyclage_entry": {"url":"https://demo.nextdom.org/", "target":"main", "label":"Recyclage"}
 }
-

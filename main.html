@@ -5,10 +5,41 @@
 	<meta http-equiv="Content-Language" content="en" />
 	<meta name="robots" content="noindex, nofollow" />
 	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<div id="main_home" style="text-align: center;">
-		<h1><img src="images/interface/smart-home.png" alt="Accueil" /></h1>
+		<h1 id="main_h1">
+			<img id="main_image" src="images/interface/smart-home.png" alt="Accueil"/>
+			<!--<img id="main_image" src="images/interface/smart-home.png" alt="Accueil" usemap="#imgmap201951214219"/>
+			 <map id="imgmap201951214219" name="imgmap201951214219">
+				<area shape="circle" alt="Chauffage" title="" coords="188,300,45" href="https://www.nextdom.org/" target="_self" />
+				<area shape="circle" alt="Multimédia" title="" coords="156,495,46" href="https://www.nextdom.org/" target="mainModalFrame"  onclick="document.getElementById('mainModal').style.display='block'" />
+				<area shape="circle" alt="Sécurité" title="" coords="157,691,45" href="" target="_self" />
+				<area shape="circle" alt="Énérgie" title="" coords="350,163,45" href="https://www.nextdom.org/" target="_self" />
+				<area shape="circle" alt="Surveillance" title="" coords="846,161,45" href="https://www.nextdom.org/" target="_self" />
+				<area shape="circle" alt="Réseau" title="" coords="598,100,63" href="" target="_self" />
+				<area shape="circle" alt="Fichiers" title="" coords="1008,300,46" href="https://www.nextdom.org/" target="_self" />
+				<area shape="circle" alt="Lumières" title="" coords="1040,494,46" href="https://www.nextdom.org/" target="_self" />
+				<area shape="circle" alt="Recyclage" title="" coords="667,565,415" href="https://www.nextdom.org/" target="_self" />
+			</map> -->
+		</h1>
+	</div>
+	<div id="mainModal" class="w3-modal">
+		<div class="w3-modal-content w3-animate-top">
+			<header class="w3-container w3-grey">
+				<span onclick="document.getElementById('mainModal').style.display='none'"
+				class="w3-button w3-display-topright">&times;</span>
+				<h2>Modal Header</h2>
+			</header>
+			<div class="w3-container">
+				<iframe id="mainModalFrame" name="mainModalFrame" class="mainModalFrame"/>
+			</div>
+			<footer class="w3-container w3-grey">
+				<p>Modal Footer</p>
+			</footer>
+		</div>
 	</div>
 </body>
 </html>

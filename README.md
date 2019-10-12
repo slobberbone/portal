@@ -78,7 +78,8 @@ Customize picture's links area :
 			-	lumieres_entry
 			-	recyclage_entry
 
-			![Portal Configuration](/portal_details.png)
+![Portal Configuration](/portal_details.png)
+
 ## Credits :
 
 - Vautour Style : http://www.be-root.com/2016/10/03/nagios-vautour-style/

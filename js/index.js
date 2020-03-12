@@ -1,16 +1,16 @@
-var menuOrigCols = null;
-var topOrigRows = null;
-var onHoverModeMenu = false;
-var onHoverModeTop = false;
+let menuOrigCols = null;
+let topOrigRows = null;
+let onHoverModeMenu = false;
+let onHoverModeTop = false;
 
 
-var hideMenuWidth = "2";
-var hideTopWidth = "2";	
+let hideMenuWidth = "2";
+let hideTopWidth = "2";
 
 window.onload = function(e){
 	
-	var hideMenu = PortalUtils.getCookie("hideMenu");
-	var hideTop = PortalUtils.getCookie("hideTop");
+	let hideMenu = PortalUtils.getCookie("hideMenu");
+	let hideTop = PortalUtils.getCookie("hideTop");
 	
 	if(hideMenu === "true"){
 		onHoverModeMenu = true;
@@ -23,10 +23,10 @@ window.onload = function(e){
 
 	$.getJSON("config/config.json", function(json) {
 
-		var autoHideMenu = true;
-		var autoHideTop = true;
+		let autoHideMenu = true;
+		let autoHideTop = true;
 		try {
-			for (var i = 0; i < json["ui"].length; i++) {
+			for (let i = 0; i < json["ui"].length; i++) {
 				if(json["ui"][i]["autoHideMenu"] === "false"){
 					autoHideMenu = false;
 				}
@@ -54,7 +54,7 @@ window.onload = function(e){
 
 // #### Side menu management ####
 function autoMenu(event) {
-	var side = document.getElementById("side");
+	let side = document.getElementById("side");
 	side.addEventListener("mouseover", autoShowFrameMenu);
 	side.addEventListener("mouseleave", autoHideFrameMenu);
 }
@@ -66,7 +66,7 @@ function autoHideFrameMenu() {
 		
 }
 function hideFrameMenu() {
-    var frameset = document.getElementById("frameSetMenu");
+    let frameset = document.getElementById("frameSetMenu");
     menuOrigCols = frameset.cols;
     frameset.cols = hideMenuWidth + ",*";
 }
@@ -84,7 +84,7 @@ function showFrameMenu() {
 // #### Top bar management ####
 
 function autoTop(event) {
-	var top = document.getElementById("top");
+	let top = document.getElementById("top");
 	top.addEventListener("mouseover", autoShowFrameTop);
 	top.addEventListener("mouseleave", autoHideFrameTop);
 }
@@ -96,7 +96,7 @@ function autoHideFrameTop() {
 		
 }
 function hideFrameTop() {
-    var frameset = document.getElementById("frameSetTop");
+    let frameset = document.getElementById("frameSetTop");
     topOrigRows = frameset.rows;
     frameset.rows = hideTopWidth + ",*";
 }
@@ -114,9 +114,9 @@ function showFrameTop() {
 // ### Loading spinner management ###
 
 function hideFrameSpinner() {
-    var frameset = document.getElementById("frameSetSpinner");
+    let frameset = document.getElementById("frameSetSpinner");
     origRows = frameset.rows;
-    var i = 70;
+    let i = 70;
     while(i>0){
 	i--;
 	sleep(500).then(changeSpinnerSize(i));

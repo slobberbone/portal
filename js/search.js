@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var srch = $("#search");
+	let srch = $("#search");
 	srch.val("Search ...");
 	srch.bind({
 		focus: function() {

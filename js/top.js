@@ -6,15 +6,15 @@ $(document).ready(function () {
 
 function GetLatestRealaseInfo() {
 	function compareToGithubVersion(localeVersion){
-        	var latestVersion;
-		var downloadURL;
+        	let latestVersion;
+		let downloadURL;
 		$.getJSON("https://api.github.com/repos/slobberbone/portal/tags").done(function(dataFromGithub){
 			return dataFromGithub;
 		}).then(function(lastRealase){
 			latestVersion = lastRealase[0].name;
-			var portalDownloadId = document.getElementById("portal-download");
-			var portalDownloadImgId = document.getElementById("portal-download-img");
-			var portalDownloadLinkId = document.getElementById("portal-download-link");
+			let portalDownloadId = document.getElementById("portal-download");
+			let portalDownloadImgId = document.getElementById("portal-download-img");
+			let portalDownloadLinkId = document.getElementById("portal-download-link");
 			portalDownloadLinkId.href=lastRealase[0].zipball_url;
 			portalDownloadId.style.display="none";
 			portalDownloadImgId.style.display="none";

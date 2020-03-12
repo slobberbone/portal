@@ -3,26 +3,31 @@ window.onload = function(e){
 		function loading(event) {
 			parent.showLoader();
 		}
-		var menu = document.getElementById("menu");
-		for (var i = 0; i < json["menu"].length; i++) {
-			var ul = document.createElement("ul");
-			var h2 = document.createElement("h2");
-			var title = document.createTextNode(json["menu"][i]["label"]);
+		let menu = document.getElementById("menu");
+		for (let i = 0; i < json["menu"].length; i++) {
+			let ul = document.createElement("ul");
+			let h2 = document.createElement("h2");
+			let title = document.createTextNode(json["menu"][i]["label"]);
 			h2.appendChild(title);
 			menu.appendChild(h2);
-			for (var j = 0; j < json["menu"][i]["entries"].length; j++) {
-				var li = document.createElement("li");
+			for (let j = 0; j < json["menu"][i]["entries"].length; j++) {
+				let li = document.createElement("li");
 				if(j%2 == 0){
 					li.className = "menuli_style1 hvr-underline-from-center";
 				} else {
 					li.className = "menuli_style2 hvr-underline-from-center";
 				}
-				var a = document.createElement("a");
+				let a = document.createElement("a");
 				a.href = json["menu"][i]["entries"][j]["url"];
 				a.target = json["menu"][i]["entries"][j]["target"];
+				a.style.display = "ruby";
 				a.addEventListener("click",loading);
-				var text = document.createTextNode(json["menu"][i]["entries"][j]["label"]);
-				a.appendChild(text);
+				let text = document.createTextNode(json["menu"][i]["entries"][j]["label"]);
+				let divLink = document.createElement("div");
+				divLink.appendChild(text);
+				divLink.style.height = "100%";
+				divLink.style.width = "100%";
+				a.appendChild(divLink);
 				li.appendChild(a);
 				ul.appendChild(li);
 			}
@@ -32,7 +37,7 @@ window.onload = function(e){
 };
 
 $(document).ready(function() {
-	var heads = $("h2");
+	let heads = $("h2");
 	heads.css("cursor", "pointer");
 	heads.prepend('<img src="images/interface/menu_less.gif" alt="" />');
 	heads.click(function() {
@@ -41,7 +46,7 @@ $(document).ready(function() {
 		});
 		$(this).next().slideToggle();
 	});
-	var link = $("div#menu ul li a");
+	let link = $("div#menu ul li a");
 	link.on("mouseenter", function() {
 		$(this).parent().stop();
 		$(this).parent().animate({"padding-left": "20px"}, 200);

@@ -4,7 +4,7 @@ window.onload = function(e){
 			function loading(event) {
 				parent.showLoader();
 			}
-      var area = document.createElement("area");
+      let area = document.createElement("area");
       area.href = json["main"][entry]["url"];
       area.target = json["main"][entry]["target"];
       area.shape = "circle";
@@ -13,10 +13,10 @@ window.onload = function(e){
 			area.addEventListener("click",loading);
       map.appendChild(area);
 		};
-		var main_h1 = document.getElementById("main_h1");
-		var main_image = document.getElementById("main_image");
+		let main_h1 = document.getElementById("main_h1");
+		let main_image = document.getElementById("main_image");
 		if(json["main"]) {
-      var map = document.createElement("map");
+      let map = document.createElement("map");
       map.name = "main_map";
       map.id = "main_map";
 

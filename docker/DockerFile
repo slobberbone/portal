@@ -1,0 +1,8 @@
+FROM nginx:latest
+
+ARG VERSION=master
+
+RUN apt-get update
+RUN apt-get install -y git
+RUN rm -Rf /usr/share/nginx/html
+RUN git clone https://github.com/slobberbone/portal.git --branch ${VERSION} --single-branch /usr/share/nginx/html

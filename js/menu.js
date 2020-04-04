@@ -20,13 +20,15 @@ window.onload = function(e){
 				let a = document.createElement("a");
 				a.href = json["menu"][i]["entries"][j]["url"];
 				a.target = json["menu"][i]["entries"][j]["target"];
-				a.style.display = "ruby";
+				a.style.whiteSpace = "nowrap";
 				a.addEventListener("click",loading);
 				let text = document.createTextNode(json["menu"][i]["entries"][j]["label"]);
 				let divLink = document.createElement("div");
 				divLink.appendChild(text);
 				divLink.style.height = "100%";
 				divLink.style.width = "100%";
+				divLink.style.whiteSpace = "nowrap";
+				divLink.style.display = "inline-block";
 				a.appendChild(divLink);
 				li.appendChild(a);
 				ul.appendChild(li);

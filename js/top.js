@@ -1,8 +1,32 @@
 
 $(document).ready(function () {
-     GetLatestRealaseInfo();  
-});  
+     GetLatestRealaseInfo();
+});
 
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function displayChromeExtension() {
+  //document.getElementById("displayFirefoxExtensionDown").classList.toggle("hide");
+  document.getElementById("displayChromeExtensionDown").classList.toggle("show");
+}
+function displayFirefoxExtension() {
+  //document.getElementById("displayChromeExtensionDown").classList.toggle("hide");
+  document.getElementById("displayFirefoxExtensionDown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 function GetLatestRealaseInfo() {
 	function compareToGithubVersion(localeVersion){
@@ -27,7 +51,7 @@ function GetLatestRealaseInfo() {
 					portalDownloadImgId.style.display="block";
 				}
 			}
-		
+
 			return true;
 		});
 	}
